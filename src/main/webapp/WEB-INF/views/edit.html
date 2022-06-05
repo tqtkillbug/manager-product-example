@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Product</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--    // Sử dụng DNS Prefetch-->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<!--    // Sử dụng Preconnect-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="/resources/css/bootstrap.css">
+    <link rel="stylesheet" href="/resources/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resources/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <script type="text/javascript" src="/resources/js/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery.validate-1.19.3.min.js"></script>
+    <script type="text/javascript" src="/resources/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/resources/js/popper-v1.16.0.min.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery.number.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="table-title mb-4">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Update Product</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a href="/" class="btn btn-outline-light"><i class="fa fa-list" aria-hidden="true"></i> <span>Product list</span></a>
+                </div>
+            </div>
+        </div>
+        <form id="frmCreateCustomer" th:action="@{/edit-product}" method="post" th:object="${product}">
+            <fieldset class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Product ID</label>
+                    <input type="text" readonly class="form-control"  th:field="*{id}" value="">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" th:field="*{name}" value="">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-control"  th:field="*{quantity}"  value="">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-control"  th:field="*{price}"  value="">
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" id="btnCreateCustomer" class="btn btn-outline-primary">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                         Save Changes
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer">
+
+    </div>
+
+</body>
+</html>
